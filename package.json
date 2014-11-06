@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rickard Laurin <rickard.laurin@gmail.com> (http://rickardlaurin.se/)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.1",
+    "jade": "^1.7.0",
+    "mongodb": "^1.4.19",
+    "q": "^1.0.1",
+    "request": "^2.47.0"
+  }
+}
