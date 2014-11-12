@@ -10,10 +10,20 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.9.2",
+    "dotenv": "^0.4.0",
     "express": "^4.10.1",
     "jade": "^1.7.0",
     "mongodb": "^1.4.19",
     "q": "^1.0.1",
     "request": "^2.47.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "gulp": "^3.8.10",
+    "gulp-mocha": "^1.1.1",
+    "mocha": "^2.0.1",
+    "proxyquire": "^1.0.1",
+    "sinon": "^1.11.1",
+    "sinon-chai": "^2.6.0"
   }
 }

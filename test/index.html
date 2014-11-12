@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movies tests</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" type="text/css" media="screen">
+  <script type="text/javascript" src="../node_modules/mocha/mocha.js"></script>
+  <script>mocha.setup('bdd');</script>
+
+  <script type="text/javascript" src="../node_modules/chai/chai.js"></script>
+  <script>var expect = chai.expect;</script>
+  <script type="text/javascript" src="../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+  <script type="text/javascript" src="../node_modules/sinon/pkg/sinon.js"></script>
+
+  <!-- Your project file goes here -->
+  <script src="../lib/routes/actor.js"></script>
+
+  <!-- Your tests file goes here -->
+  <script type="text/javascript" src="routes/actor.js"></script>
+
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <script>
+    if (window.mochaPhantomJS) {
+      mochaPhantomJS.run();
+    } else {
+      mocha.run();
+    }
+  </script>
+
+</body>
+</html>
