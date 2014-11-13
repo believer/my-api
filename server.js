@@ -7,7 +7,7 @@ var path = require('path');
 var dotenv = require('dotenv');
 
 // Load environment variables
-dotenv._getKeysAndValuesFromEnvFilePath('./lib/.env');
+dotenv._getKeysAndValuesFromEnvFilePath('./env/.env');
 dotenv._setEnvs();
 
 app.use(bodyParser.urlencoded({ extended: true }));
