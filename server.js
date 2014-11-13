@@ -34,14 +34,14 @@ var movies = require('./lib/routes/movies');
 app.use('/movies', router.get('/', movies));
 
 router = express.Router();
-var actor = require('./lib/routes/actor');
-app.use('/actor', router.get('/', actor));
+var person = require('./lib/routes/person');
+app.use('/actor', router.get('/', person));
 
 //
 // Music
 // --------------------------------------------------
+router = express.Router();
 var lastfm = require('./lib/routes/lastfm');
-
 app.use('/lastfm', router.post('/', lastfm));
 
 //

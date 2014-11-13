@@ -1,5 +1,6 @@
-var gulp         = require('gulp');
-var mocha        = require('gulp-mocha');
+var gulp    = require('gulp');
+var mocha   = require('gulp-mocha');
+var nodemon = require('gulp-nodemon');
 
 gulp.task('test', function () {
   return gulp.src(['test/**/*.js'])
@@ -11,7 +12,20 @@ gulp.task('watch', function () {
     'test']);
 });
 
+gulp.task('nodemon', function () {
+  nodemon({
+    script: 'server.js',
+    ext: 'html js',
+    ignore: [],
+    stdout: true
+  })
+  .on('restart', function () {
+    // console.log('restarted!')
+  });
+});
+
 gulp.task('default', [
   'test',
+  'nodemon',
   'watch'
 ]);

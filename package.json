@@ -21,6 +21,7 @@
     "chai": "^1.10.0",
     "gulp": "^3.8.10",
     "gulp-mocha": "^1.1.1",
+    "gulp-nodemon": "^1.0.4",
     "mocha": "^2.0.1",
     "proxyquire": "^1.0.1",
     "sinon": "^1.11.1",

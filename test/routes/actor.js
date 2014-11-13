@@ -31,8 +31,8 @@ describe('#actor', function() {
     service = {
       get: sinon.stub().returns(promise),
     };
-    route = proxyquire(process.cwd() + '/lib/routes/actor', {
-      '../services/actor': service
+    route = proxyquire(process.cwd() + '/lib/routes/person', {
+      '../services/person': service
     });
   });
 
@@ -51,7 +51,7 @@ describe('#actor', function() {
     promise.then.yield(result);
     expect(res.send).calledOnce.and.calledWith({
       movies: result,
-      actor: 'Tom Hanks'
+      name: 'Tom Hanks'
     });
   });
 
