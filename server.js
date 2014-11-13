@@ -35,7 +35,7 @@ app.use('/movies', router.get('/', movies));
 
 router = express.Router();
 var person = require('./lib/routes/person');
-app.use('/actor', router.get('/', person));
+app.use('/person', router.get('/:type', person));
 
 //
 // Music
