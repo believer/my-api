@@ -1,0 +1,52 @@
+@import "../../bower_components/mrwhite-scss-mixins/reset";
+@import "../../bower_components/mrwhite-scss-mixins/mixins";
+
+$margin: 20px;
+
+body {
+  font-family: 'Open Sans';
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: $margin;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: $margin 0;
+}
+
+h4 {
+  font-weight: bold;
+  margin-bottom: $margin;
+}
+
+.wrap {
+  margin: 100px auto;
+  width: 500px;
+}
+
+li {
+  margin-bottom: $margin / 2;
+}
+
+.get span,
+.post span {
+  background: rgb(94,159,163);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-right: $margin;
+  padding: 5px;
+}
+
+.post span {
+  background: rgb(248,126,123);
+}
+
+.desc {
+  margin: $margin 0;
+}

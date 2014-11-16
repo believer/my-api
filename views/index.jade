@@ -1,4 +1,41 @@
 extends layout
 
 block content
-  h1 API
+  .wrap
+    h1 API
+    
+    h3 Person
+    h4 /person/:type
+
+    .desc Query string parameters name
+
+    ul
+      li.get
+        span GET
+        /person/actor
+      li.get
+        span GET
+        /person/cast
+      li.get
+        span GET
+        /person/director
+      li.get
+        span GET
+        /person/writer
+
+    h3 Movies
+    
+    .desc Query string parameters skip and limit
+
+    ul
+      li.get
+        span GET
+        /movies
+
+
+    h3 Last.fm
+    ul
+      li.post 
+        span POST
+        /lastfm
+        .desc Form data like text=np' or 'text=nowplaying' to get now playing from the Iteam1337 account. 'text=np:hpbeliever' to get now playing song for hpbeliever.
