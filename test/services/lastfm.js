@@ -6,6 +6,7 @@ var Q          = require('q');
 
 chai.use(require('sinon-chai'));
 
+
 describe("/lastfmService", function() {
   var lastfmService,
     routes,
