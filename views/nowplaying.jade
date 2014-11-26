@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  .now-playing
+    form(method="post", action="/tmdb")
+      input(type="text", name="imdbid", placeholder="IMDb ID")
+      input(type="text", name="rating", placeholder="Rating")
+      input.btn(type="submit", placeholder="Skicka")

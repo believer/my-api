@@ -3,8 +3,8 @@
 var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
-var path = require('path');
-var dotenv = require('dotenv');
+var path       = require('path');
+var dotenv     = require('dotenv');
 
 // Load environment variables
 dotenv._getKeysAndValuesFromEnvFilePath('./env/.env');
@@ -12,8 +12,6 @@ dotenv._setEnvs();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-console.log(__dirname);
 
 app.use(express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'));
@@ -39,6 +37,17 @@ app.use('/movies', router.get('/', movies));
 router = express.Router();
 var person = require('./lib/routes/person');
 app.use('/person', router.get('/:type', person));
+
+router = express.Router();
+var np = require('./lib/routes/np');
+app.use('/np', router.get('/', np));
+
+//
+// Resources
+// --------------------------------------------------
+router = express.Router();
+var tmdb = require('./lib/routes/tmdb');
+app.use('/tmdb', router.post('/', tmdb));
 
 //
 // Music
