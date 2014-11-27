@@ -26,6 +26,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^1.1.0",
     "mocha": "^2.0.1",
+    "mongojs": "^0.17.0",
     "q": "^1.1.2",
     "sinon": "^1.12.1",
     "sinon-chai": "^2.6.0"

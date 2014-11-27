@@ -20,6 +20,11 @@ app.set('view engine', 'jade');
 var port = process.env.PORT || 3000;
 var router;
 
+// Setup DB
+var databaseUrl = process.env.MONGO_URL;
+var collections = ["movies", "newmovies"]
+var db = require("mongojs").connect(databaseUrl, collections);
+
 //
 // Documentation
 // --------------------------------------------------
@@ -48,6 +53,10 @@ app.use('/np', router.get('/', np));
 router = express.Router();
 var tmdb = require('./lib/routes/tmdb');
 app.use('/tmdb', router.post('/', tmdb));
+
+router = express.Router();
+var meta = require('./lib/routes/meta');
+app.use('/meta', router.get('/', meta));
 
 //
 // Music
