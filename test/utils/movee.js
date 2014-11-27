@@ -96,12 +96,6 @@ describe("/Utilities", function() {
     });
   });
 
-  describe('#mongoConnect', function() {
-    it('should be a function', function () {
-      expect(movee.mongoConnect).to.be.a('function');
-    });
-  });
-
   describe('#getCrew', function() {
     it('should be a function', function () {
       expect(movee.getCrew).to.be.a('function');
