@@ -58,6 +58,10 @@ router = express.Router();
 var meta = require('./lib/routes/meta');
 app.use('/meta', router.get('/', meta));
 
+router = express.Router();
+var imdb = require('./lib/routes/imdb');
+app.use('/imdb', router.get('/', imdb));
+
 //
 // Music
 // --------------------------------------------------
