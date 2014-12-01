@@ -12,16 +12,13 @@ block content
     ul
       li.get
         span GET
-        | /person/actor
+        a(href="/person/cast?name=Leonardo+DiCaprio") /person/cast
       li.get
         span GET
-        | /person/cast
+        a(href="/person/director?name=Darren+Aronofsky") /person/director
       li.get
         span GET
-        | /person/director
-      li.get
-        span GET
-        | /person/writer
+        a(href="/person/writer?name=Steven+Zaillian") /person/writer
 
     h3 Movies
     
@@ -30,7 +27,7 @@ block content
     ul
       li.get
         span GET
-        | /movies
+        a(href="/movies") /movies
 
 
     h3 Last.fm
