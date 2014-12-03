@@ -62,6 +62,10 @@ router = express.Router();
 var imdb = require('./lib/routes/imdb');
 app.use('/imdb', router.get('/', imdb));
 
+router = express.Router();
+var stats = require('./lib/routes/stats');
+app.use('/stats', router.get('/', stats));
+
 //
 // Music
 // --------------------------------------------------
