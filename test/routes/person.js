@@ -5,7 +5,7 @@ var proxyquire = require('proxyquire');
 
 chai.use(require('sinon-chai'));
 
-describe('#actor', function() {
+describe('#person', function() {
   var route, 
     service,
     req,
@@ -45,14 +45,33 @@ describe('#actor', function() {
     expect(service.get).calledOnce.and.calledWith({ query: { name: 'Tom Hanks' }});
   });
 
-  xit('should send result', function () {
-    var result = [{ title: 'Forrest Gump' }];
+  it('should send result', function () {
+    var result = [{ title: 'Forrest Gump', rating: 9 }];
     route(req,res,next);
     promise.then.yield(result);
     expect(res.send).calledOnce.and.calledWith({
       movies: result,
-      name: 'Tom Hanks'
+      averageRating: 9,
+      name: 'Tom Hanks',
+      results: result.length
     });
+  });
+
+  it("should calculate the average rating of a person based on the movie ratings", function() {
+    var result = [
+      { title: 'Forrest Gump', rating: 9 },
+      { title: 'Cast Away', rating: 8 },
+      { title: 'Saving Private Ryan', rating: 8 },
+      { title: 'Joe Versus The Volcano' }
+    ];
+    route(req,res,next);
+    promise.then.yield(result);
+    expect(res.send).calledOnce.and.calledWith({
+      movies: result,
+      averageRating: 8.33,
+      name: 'Tom Hanks',
+      results: result.length
+    });    
   });
 
   it('should call next with error if any', function () {

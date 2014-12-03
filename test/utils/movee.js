@@ -6,7 +6,6 @@ var sinon  = require('sinon');
 var movee  = require('../../lib/utils/movee');
 
 describe("/Utilities", function() {
-  
   describe('#sortNames', function() {
     var sandbox;
 

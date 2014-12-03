@@ -24,6 +24,10 @@ describe('#lastfm', function() {
     res = {
       send: sinon.spy()
     };
+
+    process.env.MONGO_URL = 'movies';
+    process.env.MONGO_COLLECTION = 'movies';
+
     service = {
       get: sinon.stub().returns(promise),
     };

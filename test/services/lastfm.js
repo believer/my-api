@@ -6,13 +6,11 @@ var Q          = require('q');
 
 chai.use(require('sinon-chai'));
 
-
 describe("/lastfmService", function() {
   var lastfmService,
     routes,
     promise,
     req,
-    movee,
     request,
     url;
 
@@ -29,16 +27,11 @@ describe("/lastfmService", function() {
 
     process.env.LASTFM_KEY = 'kee';
 
-    movee = {
-      mongoConnect: sinon.spy()
-    };
-
     url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user={user}&api_key=kee&format=json&limit=1';
 
     request = sinon.stub();
 
     lastfmService = proxyquire(process.cwd() + '/lib/services/lastfm', {
-      '../utils/movee': movee,
       'request': request
     });
   });
