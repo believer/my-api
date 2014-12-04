@@ -20,7 +20,7 @@
     "proxyquire": "^1.1.0",
     "q": "^1.1.2",
     "chai": "^1.10.0",
-    "request": "^2.48.0"
+    "request": "^2.48.0",
     "sinon": "^1.12.1",
     "sinon-chai": "^2.6.0"
   },
@@ -30,6 +30,6 @@
     "gulp-mocha": "^2.0.0",
     "gulp-nodemon": "^1.0.4",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "^1.1.0",
+    "gulp-sass": "^1.1.0"
   }
 }
