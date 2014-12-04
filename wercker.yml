@@ -12,17 +12,17 @@ deploy:
     - create-file:
         name: write key
         filename: $PRIVATEKEY_PATH
-        content: $WERCKER_PRIVATE
+        content: $DOKKU_PRIVATE
         overwrite: true
-    - script:
-        name: create config
-        code: |
-          touch ~/.ssh/config
-          printf "Host *\n\tIdentityFile $PRIVATEKEY_PATH" > ~/.ssh/config
+    # - script:
+    #     name: create config
+    #     code: |
+    #       touch ~/.ssh/config
+    #       printf "Host *\n\tIdentityFile $PRIVATEKEY_PATH" > ~/.ssh/config
     - script:
         name: Initialize new repository
         code: |
-          cat ~/.ssh/config
+          # cat ~/.ssh/config
           rm -rf .git
           rm -rf node_modules/
           git init
