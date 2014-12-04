@@ -15,9 +15,9 @@ deploy:
         content: $WERCKER_PRIVATE
         overwrite: true
     - script:
-      name: create config
-      code: |
-        touch ~/.ssh/config
+        name: create config
+        code: |
+          touch ~/.ssh/config
     - create-file:
         name: write config
         filename: ~/.ssh/config
