@@ -18,8 +18,7 @@ deploy:
         name: create config
         code: |
           touch ~/.ssh/config
-          echo "Host *
-              IdentityFile $PRIVATEKEY_PATH" > ~/.ssh/config
+          printf "Host *\n\tIdentityFile $PRIVATEKEY_PATH" > ~/.ssh/config
     - script:
         name: Initialize new repository
         code: |
