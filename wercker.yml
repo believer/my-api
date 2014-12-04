@@ -14,11 +14,11 @@ deploy:
         filename: $PRIVATEKEY_PATH
         content: $DOKKU_PRIVATE
         overwrite: true
-    # - script:
-    #     name: create config
-    #     code: |
-    #       touch ~/.ssh/config
-    #       printf "Host *\n\tIdentityFile $PRIVATEKEY_PATH" > ~/.ssh/config
+    - script:
+        name: create config
+        code: |
+          touch ~/.ssh/config
+          printf "Host *\n\tIdentityFile $PRIVATEKEY_PATH" > ~/.ssh/config
     - script:
         name: Initialize new repository
         code: |
