@@ -7,8 +7,19 @@ deploy:
   steps:
     - add-to-known_hosts:
         hostname: $SERVER_HOSTNAME
-    - add-ssh-key:
-        keyname: DOKKU
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $WERCKER_PRIVATE
+        overwrite: true
+    - create-file:
+        name: write config
+        filename: ~/.ssh/config
+        content: |
+          Host *
+            IdentityFile $PRIVATEKEY_PATH
     - script:
         name: Initialize new repository
         code: |
