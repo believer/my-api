@@ -22,6 +22,8 @@ describe('/moviesService', function () {
       })
     };
 
+    process.env.MONGO_COLLECTION = 'movies';
+
     mongojs = {
       connect: sinon.stub().returns({
         movies: {
@@ -56,7 +58,7 @@ describe('/moviesService', function () {
     };
 
     moviesService.get(req);
-    expect(mongojs.connect.defaultBehavior.returnValue.movies.find).calledOnce.and.calledWith({});
+    expect(mongojs.connect().movies.find).calledOnce.and.calledWith({});
   });
 
   it("should call db to find movies WITH query", function() {
@@ -67,7 +69,7 @@ describe('/moviesService', function () {
     };
 
     moviesService.get(req);
-    expect(mongojs.connect.defaultBehavior.returnValue.movies.find).calledOnce.and.calledWith({ title: { $regex: 'Inception', $options: 'i' } });
+    expect(mongojs.connect().movies.find).calledOnce.and.calledWith({ title: { $regex: 'Inception', $options: 'i' } });
   });
 
   it("should call with correct sortorder", function() {
@@ -76,7 +78,7 @@ describe('/moviesService', function () {
     };
 
     moviesService.get(req);
-    expect(mongojs.connect.defaultBehavior.returnValue.movies.find.defaultBehavior.returnValue.sort).calledOnce.and.calledWith({ _id: -1 });
+    expect(mongojs.connect().movies.find().sort).calledOnce.and.calledWith({ _id: -1 });
   });
 
   it("should call skip with 0 if no skip is given in query", function() {
@@ -85,7 +87,7 @@ describe('/moviesService', function () {
     };
 
     moviesService.get(req);
-    expect(mongojs.connect.defaultBehavior.returnValue.movies.find.defaultBehavior.returnValue.sort.defaultBehavior.returnValue.skip).calledOnce.and.calledWith(0);    
+    expect(mongojs.connect().movies.find().sort().skip).calledOnce.and.calledWith(0);    
   });
 
   it("should call skip with 1337 if query has skip:1337", function() {
@@ -96,7 +98,7 @@ describe('/moviesService', function () {
     };
 
     moviesService.get(req);
-    expect(mongojs.connect.defaultBehavior.returnValue.movies.find.defaultBehavior.returnValue.sort.defaultBehavior.returnValue.skip).calledOnce.and.calledWith(1337);    
+    expect(mongojs.connect().movies.find().sort().skip).calledOnce.and.calledWith(1337);    
   });
 
 
@@ -108,6 +110,6 @@ describe('/moviesService', function () {
     };
 
     moviesService.get(req);
-    expect(mongojs.connect.defaultBehavior.returnValue.movies.find.defaultBehavior.returnValue.sort.defaultBehavior.returnValue.skip.defaultBehavior.returnValue.limit).calledOnce.and.calledWith(500);    
+    expect(mongojs.connect().movies.find().sort().skip().limit).calledOnce.and.calledWith(500);    
   });
 });

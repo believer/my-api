@@ -1,7 +1,7 @@
-var chai       = require('chai')
-,   expect     = chai.expect
-,   sinon      = require('sinon')
-,   proxyquire = require('proxyquire');
+var chai       = require('chai');
+var expect     = chai.expect;
+var sinon      = require('sinon');
+var proxyquire = require('proxyquire');
 
 chai.use(require('sinon-chai'));
 
@@ -24,9 +24,6 @@ describe('#lastfm', function() {
     res = {
       send: sinon.spy()
     };
-
-    process.env.MONGO_URL = 'movies';
-    process.env.MONGO_COLLECTION = 'movies';
 
     service = {
       get: sinon.stub().returns(promise),
