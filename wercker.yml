@@ -12,7 +12,7 @@ deploy:
     - script:
         name: Initialize new repository
         code: |
-          ls ~/.ssh
+          ls ~/.ssh/config
           rm -rf .git
           rm -rf node_modules/
           git init
