@@ -14,7 +14,7 @@ deploy:
         filename: $PRIVATEKEY_PATH
         content: $WERCKER_PRIVATE
         overwrite: true
-    - script
+    - script:
       name: create config
       code: |
         touch ~/.ssh/config
