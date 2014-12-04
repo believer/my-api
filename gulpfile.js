@@ -54,3 +54,8 @@ gulp.task('default', [
   'nodemon',
   'watch'
 ]);
+
+gulp.task('build', [
+  'test',
+  'scss'
+])
