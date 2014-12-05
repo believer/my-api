@@ -7,26 +7,13 @@ deploy:
   steps:
     - add-to-known_hosts:
         hostname: $SERVER_HOSTNAME
-    - mktemp:
-        envvar: PRIVATEKEY_PATH
-    - create-file:
-        name: write key
-        filename: $PRIVATEKEY_PATH
-        content: $DOKKU_PRIVATE
-        overwrite: true
     - add-ssh-key:
         keyname: DOKKU
     - script:
-        name: create config
-        code: |
-          touch ~/.ssh/config
-          printf "Host *\n\tIdentitiesOnly yes\n\tIdentityFile $PRIVATEKEY_PATH" > ~/.ssh/config
-    - script:
         name: Initialize new repository
         code: |
-          cat ~/.ssh/config
+          cat ~/.ssh/id_rsa.pub
           rm -rf .git
-          rm -rf node_modules/
           git init
           git config --global user.name "wercker"
           git config --global user.email "pleasemailus@wercker.com"
