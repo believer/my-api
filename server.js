@@ -44,6 +44,10 @@ var person = require('./lib/routes/person');
 app.use('/person', router.get('/:type', person));
 
 router = express.Router();
+var rating = require('./lib/routes/rating');
+app.use('/movies/rating', router.get('/:rating', rating));
+
+router = express.Router();
 var np = require('./lib/routes/np');
 app.use('/np', router.get('/', np));
 

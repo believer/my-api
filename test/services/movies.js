@@ -54,7 +54,8 @@ describe('/moviesService', function () {
 
   it("should call db to find movies without query", function() {
     req = {
-      query: {}
+      query: {},
+      params: {}
     };
 
     moviesService.get(req);
@@ -65,7 +66,8 @@ describe('/moviesService', function () {
     req = {
       query: {
         title: 'Inception'
-      }
+      },
+      params: {}
     };
 
     moviesService.get(req);
@@ -74,7 +76,8 @@ describe('/moviesService', function () {
 
   it("should call with correct sortorder", function() {
     req = {
-      query: {}
+      query: {},
+      params: {}
     };
 
     moviesService.get(req);
@@ -83,7 +86,8 @@ describe('/moviesService', function () {
 
   it("should call skip with 0 if no skip is given in query", function() {
     req = {
-      query: {}
+      query: {},
+      params: {}
     };
 
     moviesService.get(req);
@@ -94,7 +98,8 @@ describe('/moviesService', function () {
     req = {
       query: {
         skip: 1337
-      }
+      },
+      params: {}
     };
 
     moviesService.get(req);
@@ -106,7 +111,8 @@ describe('/moviesService', function () {
     req = {
       query: {
         limit: 500
-      }
+      },
+      params: {}
     };
 
     moviesService.get(req);

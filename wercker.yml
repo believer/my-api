@@ -12,8 +12,6 @@ deploy:
     - script:
         name: Initialize new repository
         code: |
-          ls ~/.ssh
-          cat ~/.ssh/id_rsa.pub
           rm -rf .git
           git init
           git config --global user.name "wercker"
