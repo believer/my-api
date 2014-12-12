@@ -7,8 +7,6 @@ block content
     h3 Person
     h4 /person/:type
 
-    .desc Query string parameters name
-
     ul
       li.get
         span GET
@@ -19,15 +17,22 @@ block content
       li.get
         span GET
         a(href="/person/writer?name=Steven+Zaillian") /person/writer
-
+    ul.params
+      li.params__title Required parameters
+      li.params__param name
     h3 Movies
     
-    .desc Query string parameters skip, limit and title
-
     ul
       li.get
         span GET
         a(href="/movies") /movies
+        ul.params
+          li.params__title Optional parameters
+          li.params__param skip
+            .params__desc default: 0
+          li.params__param limit
+            .params__desc default: 50
+          li.params__param title
       li.get
         span GET
         a(href="/movies/rating/10") /movies/rating/:rating
@@ -37,4 +42,7 @@ block content
       li.post 
         span POST
         | /lastfm
-        .desc Form data like 'text=np' or 'text=nowplaying' to get now playing from the Iteam1337 account. 'text=np:hpbeliever' to get now playing song for hpbeliever.
+    ul.params
+      li.params__title Required parameters
+      li.params__param text=np / text=np:{username}
+        .params__desc form data

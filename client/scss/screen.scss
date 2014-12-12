@@ -55,3 +55,25 @@ li {
 .desc {
   margin: $margin 0;
 }
+
+//
+// Params
+// --------------------------------------------------
+.params {
+  margin: $margin 0;
+}
+
+.params__title {
+  font-weight: bold;
+}
+
+.params__param {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin: 0;
+  padding: $margin / 2 0;
+}
+
+.params__desc {
+  color: rgba(0,0,0,.2);
+  float: right;
+}
