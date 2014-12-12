@@ -2,6 +2,8 @@ extends layout
 
 block content
   .now-playing
+    a.btn(href="/auth/twitter") Twitter auth
+
     form(method="post", action="/tmdb")
       input(type="text", name="imdbid", placeholder="IMDb ID")
       input(type="text", name="rating", placeholder="Rating")
