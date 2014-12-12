@@ -58,11 +58,37 @@ describe("/lastfmService", function() {
         text: '30 Seconds to Mars - The Kill (_believer_)'
       });
     });
+
+    it("should return a message from lastfm if their api throws an error", function() {
+      var body = '{"error":"true", "message": "nope"}';
+
+      expect(lastfmService.prepareResponse(body)).to.eql({
+        text: 'nope'
+      });
+    });
+
+    it("should send nothing playing by user if no tracks are returned", function() {
+      var body = '{"recenttracks": { "user": "believer" }}';
+
+      expect(lastfmService.prepareResponse(body)).to.eql({
+        text: 'Nothing playing (_believer_)'
+      });      
+    });
   });
 
   describe('#service', function () {
     it('should be a function', function () {
       expect(lastfmService.get).to.be.a('function');
+    });
+
+    it("should return empty if string contains a URL (Alfred NP)", function() {
+      req = {
+        body: {
+          text: 'np: Philter - Lotus Land (http://open.spotify.com/fe423n2od3)'
+        }
+      }
+
+      expect(lastfmService.get(req)).to.eql({ text: '' });
     });
 
     it('should send a request to the Last.fm API when someone types "np:username"', function () {
