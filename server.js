@@ -13,7 +13,11 @@ dotenv._setEnvs();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(session({secret:'shhh'}));
+app.use(session({
+  secret:'shhh',
+  resave: false,
+  saveUninitialized: true
+}));
 
 app.use(express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'));
