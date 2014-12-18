@@ -14,6 +14,10 @@ describe("/lastfmService", function() {
     request,
     url;
 
+  var key;
+
+  var key;
+
   beforeEach(function () {
     req = {
       body: {
@@ -25,6 +29,8 @@ describe("/lastfmService", function() {
       get: sinon.stub()
     };
 
+    key = process.env.LASTFM_KEY;
+
     process.env.LASTFM_KEY = 'kee';
 
     url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user={user}&api_key=kee&format=json&limit=1';
@@ -34,6 +40,10 @@ describe("/lastfmService", function() {
     lastfmService = proxyquire(process.cwd() + '/lib/services/lastfm', {
       'request': request
     });
+  });
+
+  afterEach(function () {
+    process.env.LASTFM_KEY = key;
   });
 
   describe("#prepareUrl", function() {
