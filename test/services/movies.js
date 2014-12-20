@@ -81,7 +81,7 @@ describe('/moviesService', function () {
     };
 
     moviesService.get(req);
-    expect(mongojs.connect().movies.find().sort).calledOnce.and.calledWith({ _id: -1 });
+    expect(mongojs.connect().movies.find().sort).calledOnce.and.calledWith({ date: -1 });
   });
 
   it("should call skip with 0 if no skip is given in query", function() {
