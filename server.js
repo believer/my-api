@@ -77,6 +77,10 @@ router = express.Router();
 var stats = require('./lib/routes/stats');
 app.use('/stats', router.get('/', stats));
 
+router = express.Router();
+var best = require('./lib/routes/best');
+app.use('/best', router.get('/', best));
+
 //
 // Twitter
 // --------------------------------------------------
