@@ -141,6 +141,9 @@ a img {
 body {
   font-family: 'Open Sans';
   line-height: 1.5; }
+  @media only screen and (max-width: 480px) {
+    body {
+      padding: 20px; } }
 
 h1 {
   font-size: 2rem;
@@ -161,7 +164,10 @@ a {
 
 .wrap {
   margin: 100px auto;
-  width: 500px; }
+  max-width: 500px; }
+  @media only screen and (max-width: 480px) {
+    .wrap {
+      margin: 0; } }
 
 li {
   margin-bottom: 10px; }
@@ -184,7 +190,8 @@ li {
   margin: 20px 0; }
 
 .params__title {
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 20px; }
 
 .params__param {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -194,3 +201,6 @@ li {
 .params__desc {
   color: rgba(0, 0, 0, 0.2);
   float: right; }
+  @media only screen and (max-width: 480px) {
+    .params__desc {
+      float: none; } }
