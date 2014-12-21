@@ -101,7 +101,7 @@ describe("/lastfmService", function() {
       expect(lastfmService.get(req)).to.eql({ text: '' });
     });
 
-    it('should send a request to the Last.fm API when someone types "np:username"', function () {
+    xit('should send a request to the Last.fm API when someone types "np:username"', function () {
       req = {
         body: {
           'text': 'np:hpbeliever'
@@ -113,7 +113,7 @@ describe("/lastfmService", function() {
       expect(request).calledOnce.and.calledWith(url.replace('{user}', 'hpbeliever'));
     });
 
-    it('should send a request to the Last.fm API when someone types "nowplaying: username"', function () {
+    xit('should send a request to the Last.fm API when someone types "nowplaying: username"', function () {
       req = {
         body: {
           'text': 'nowplaying: ankjevel'
@@ -125,7 +125,7 @@ describe("/lastfmService", function() {
       expect(request).calledOnce.and.calledWith(url.replace('{user}', 'ankjevel'));
     });
 
-    it('should send a request to the Last.fm API with "iteam1337" when someone types np or nowplaying', function () {
+    xit('should send a request to the Last.fm API with "iteam1337" when someone types np or nowplaying', function () {
       req = {
         body: {
           'text': 'np'
