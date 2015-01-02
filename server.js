@@ -5,7 +5,8 @@ var app        = express();
 var bodyParser = require('body-parser');
 var path       = require('path');
 var dotenv     = require('dotenv');
-var session = require('express-session');
+var session    = require('express-session');
+var cors       = require('cors')
 
 // Load environment variables
 dotenv._getKeysAndValuesFromEnvFilePath('./env/.env');
@@ -18,6 +19,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+app.use(cors());
 
 app.use(express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'));
