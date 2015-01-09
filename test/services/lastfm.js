@@ -73,7 +73,7 @@ describe("/lastfmService", function() {
       var body = '{"recenttracks": {"track": {"artist": {"#text": "30 Seconds to Mars"},"name": "The Kill"},"@attr": {"user": "believer"}}}';
 
       expect(lastfmService.prepareResponse(body)).to.eql({
-        text: '30 Seconds to Mars - The Kill (_believer_) *last played*'
+        text: '*Last played:* 30 Seconds to Mars - The Kill (_believer_)'
       });      
     });
 
