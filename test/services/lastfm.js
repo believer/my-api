@@ -69,6 +69,14 @@ describe("/lastfmService", function() {
       });
     });
 
+    it('should add paused to the end if user is not playing at the moment', function() {
+      var body = '{"recenttracks": {"track": {"artist": {"#text": "30 Seconds to Mars"},"name": "The Kill"},"@attr": {"user": "believer"}}}';
+
+      expect(lastfmService.prepareResponse(body)).to.eql({
+        text: '30 Seconds to Mars - The Kill (_believer_) *last played*'
+      });      
+    });
+
     it("should return a message from lastfm if their api throws an error", function() {
       var body = '{"error":"true", "message": "nope"}';
 
