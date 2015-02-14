@@ -205,6 +205,10 @@ li {
     .params__desc {
       float: none; } }
 
+.now-playing {
+  margin: 50px auto;
+  max-width: 500px; }
+
 .input__text {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
