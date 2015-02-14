@@ -204,3 +204,30 @@ li {
   @media only screen and (max-width: 480px) {
     .params__desc {
       float: none; } }
+
+.input__text {
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #eeeeee;
+  border: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 15px 30px;
+  width: 100%; }
+  .input__text:focus {
+    outline: none; }
+
+.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background: #5e9fa3;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px 0;
+  width: 100%; }

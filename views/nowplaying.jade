@@ -5,6 +5,6 @@ block content
     a.btn(href="/auth/twitter") Twitter auth
 
     form(method="post", action="/tmdb")
-      input(type="text", name="imdbid", placeholder="IMDb ID")
-      input(type="text", name="rating", placeholder="Rating")
-      input.btn(type="submit", placeholder="Skicka")
+      input(type="text", name="imdbid", class="input__text", placeholder="IMDb ID")
+      input(type="text", name="rating", class="input__text", pattern="\d*", placeholder="Rating")
+      input.btn(type="submit", class="button", placeholder="Skicka")

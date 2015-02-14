@@ -2,6 +2,7 @@
 @import "../../bower_components/mrwhite-scss-mixins/mixins";
 
 $margin: 20px;
+$color--accent: rgb(94,159,163);
 
 body {
   font-family: 'Open Sans';
@@ -89,4 +90,31 @@ li {
   @include mobile {
     float: none;
   }
+}
+
+.input__text {
+  @include box-sizing;
+
+  background: rgb(238,238,238);
+  border: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 15px 30px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  @include appearance(none);
+
+  background: $color--accent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px 0;
+  width: 100%;
 }
