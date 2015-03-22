@@ -4,13 +4,8 @@ var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
 var path       = require('path');
-var dotenv     = require('dotenv');
 var session    = require('express-session');
 var cors       = require('cors')
-
-// Load environment variables
-dotenv._getKeysAndValuesFromEnvFilePath('./env/.env');
-dotenv._setEnvs();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

@@ -31,7 +31,7 @@ gulp.task('nodemon', function () {
   nodemon({
     script: 'server.js',
     ext: 'html js',
-    ignore: [],
+    nodeArgs: ['--harmony'],
     stdout: true
   })
   .on('restart', function () {

@@ -21,47 +21,16 @@ describe("/Utilities", function() {
       expect(movee.sortNames).to.be.a('function');
     });
 
-    it('should return an array with keys', function () {
-      var names = [
-        'Tom Hanks',
-        'Samuel L. Jackson'
-      ];
+    it('should return a sorted listed', function () {
+      var names = new Map();
 
-      expect(movee.sortNames(names, 5)).to.be.an('object').with.keys(['array', 'total']);
-    });
+      names.set('Jason Statham', 1);
+      names.set('Tom Hanks', 2);
 
-    it('should return how many persons were in the category', function () {
-      var names = [
-        'Tom Hanks',
-        'Samuel L. Jackson'
-      ];
-
-      var results = movee.sortNames(names, 5);
-
-      expect(results.total).to.eql(2);
-    });
-
-    it('should call getTen with sorted arrays and max number', function () {
-      sandbox.spy(movee, 'getTen');
-
-      var names = [
-        'Tom Hanks',
-        'Samuel L. Jackson',
-        'Tom Hanks'
-      ];
-
-      var persons = [
-        'Samuel L. Jackson',
-        'Tom Hanks'
-      ];
-
-      var movies = [1,2];
-
-      var collection = [persons, movies];
-
-      movee.sortNames(names, 5);
-
-      expect(movee.getTen).calledOnce.and.calledWith(collection, 5);
+      expect(movee.sortNames(names)).to.eql([
+        { name: 'Tom Hanks', movies: 2 },
+        { name: 'Jason Statham', movies: 1 },
+      ])
     });
   });
 
